@@ -6,9 +6,9 @@ import { GetCoinsDto } from './dto/getCoins.dto';
 @Controller('price')
 export class CoinsController {
   constructor(private coinsService: CoinsService) {}
+
   @Get()
   public async getCoins(@Query() query: GetCoinsDto) {
-    console.log(query);
     return await this.coinsService.getCoins(query.asset);
   }
 }
